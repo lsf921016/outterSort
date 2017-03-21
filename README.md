@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #一.涉及知识
 1. 堆排序，归并排序, 选择置换，多路归并，败者树
 2. 文件io操作
@@ -334,3 +335,8 @@ public class generateData {
 
 ```
 代码github地址：https://github.com/lsf921016
+=======
+# outterSort
+外排序算法，对8000万条记录进行排序，耗时657211ms，算法思想：置换选择排序+最优多路归并-败者树
+
+>>>>>>> origin/master
