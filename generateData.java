@@ -6,9 +6,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Random;
 
-/**
- * Created by lenovo on 2017/3/21.
- */
 public class generateData {
     public static void main(String[] args) throws IOException {
         final int MAX=80000000;
