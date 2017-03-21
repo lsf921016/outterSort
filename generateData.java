@@ -11,8 +11,8 @@ import java.util.Random;
  */
 public class generateData {
     public static void main(String[] args) throws IOException {
-        final int MAX=3500000;
-        File f=new File("E:\\javaStudy\\src\\outterSort\\inputFile.txt");
+        final int MAX=80000000;
+        File f=new File("E:\\javaStudy\\src\\outterSort\\myInputFile.txt");
         if (f.exists())
             f.delete();
         BufferedWriter bufw=new BufferedWriter(new FileWriter(f));
@@ -28,8 +28,13 @@ public class generateData {
         Random random=new Random();
         for (int i = 0; i < 8; i++) {
             sb.append((char)(random.nextInt(26)+97));
+
         }
         sb.append(',');
+        for (int i = 0; i <16 ; i++) {
+            sb.append((char)(random.nextInt(26)+97));
+        }
+
         return sb.toString();
     }
 }

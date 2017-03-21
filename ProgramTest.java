@@ -12,7 +12,7 @@ import java.util.List;
  */
 
 public class ProgramTest {
-    static final int maxSize = 500000;//内存每次最多放500000条记录
+    static final int maxSize = 1500000;//内存每次最多放500000条记录
     static final char[] maxKey = {255, 255, 255, 255, 255, 255, 255, 255, ','};
 
     /**
