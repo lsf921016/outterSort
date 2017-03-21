@@ -5,7 +5,7 @@ import java.io.File;
 /**
  * Created by lenovo on 2017/3/19.
  */
-public class testProgram {
+public class test {
     public static void main(String[] args) throws Exception {
         long start=System.currentTimeMillis();
         File inputFile=new File("E:\\javaStudy\\src\\outterSort\\inputFile.txt");
