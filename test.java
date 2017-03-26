@@ -13,7 +13,7 @@ public class test {
         File tempFile=new File("E:\\javaStudy\\src\\outterSort\\tempFile");
         if (outputFile.exists())
             outputFile.delete();
-        ProgramTest.test(inputFile,outputFile,tempFile);
+        main.test(inputFile,outputFile,tempFile);
         long end=System.currentTimeMillis();
         System.out.println(end-start);
     }

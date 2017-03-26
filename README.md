@@ -83,7 +83,7 @@ public class ProgramTest {
     static final char[] maxKey = {255, 255, 255, 255, 255, 255, 255, 255, ','};
 
 
-    public static void test(File inputFile, File outputFile, File tempFile) throws Exception {
+    public static void Zhihu(File inputFile, File outputFile, File tempFile) throws Exception {
 
         BufferedReader bufr = new BufferedReader(new FileReader(inputFile));
 
