@@ -44,7 +44,7 @@ public class main {
                     heapArray[heapSize - 1] = line;
                     heapSize--;
                 }
-                siftDown(heapArray, 0, heapSize);
+                siftDown(heapArray, 0, heapSize, 0);
             }
             if (heapSize != 0) {//file input is completed
                 i = i - heapSize;
@@ -53,7 +53,7 @@ public class main {
                     bufw.newLine();
                     heapArray[0] = heapArray[heapSize - 1];
                     heapSize--;
-                    siftDown(heapArray, 0, heapSize);
+                    siftDown(heapArray, 0, heapSize, 0);
                 }
             }
             bufw.close();
@@ -61,7 +61,7 @@ public class main {
         //continue to read the rest data in buffer
         if (i != 0) {
             heapSize = i;
-            File newTempFile = File.createTempFile("tempFile.txt", ".txt", tempFile.getParentFile());
+            File newTempFile = File.createTempFile("tempFile", ".txt", tempFile);
             tempFiles.add(newTempFile);
             BufferedWriter bufw = new BufferedWriter(new FileWriter(newTempFile));
             int offset = maxSize - heapSize;
@@ -71,7 +71,7 @@ public class main {
                 bufw.newLine();
                 heapArray[offset] = heapArray[offset + heapSize - 1];
                 heapSize--;
-                siftDown(heapArray, offset, heapSize);
+                siftDown(heapArray, 0, heapSize, offset);
 
             }
             bufw.close();
@@ -93,24 +93,24 @@ public class main {
 
 
     private static void buildHeap(String heapArray[], int size, int start) {
-        for (int i = size / 2 - 1; i >= start; i--) {
-            siftDown(heapArray, i, size);
+        for (int i = size / 2 - 1; i >= 0; i--) {
+            siftDown(heapArray, i, size, start);
         }
     }
 
-    private static void siftDown(String[] heapArray, int i, int size) {
+    private static void siftDown(String[] heapArray, int i, int size, int start) {
         int j = 2 * i + 1;
-        String temp = heapArray[i];
+        String temp = heapArray[start+i];
         while (j < size) {
-            if (j < size - 1 && (keyOf(heapArray[j]).compareTo(keyOf(heapArray[j + 1]))) > 0)
+            if (j < size - 1 && (keyOf(heapArray[start+j]).compareTo(keyOf(heapArray[start+j+1]))) > 0)
                 ++j;
-            if (keyOf(temp).compareTo(heapArray[j]) > 0) {
-                heapArray[i] = heapArray[j];
+            if (keyOf(temp).compareTo(heapArray[start+j]) > 0) {
+                heapArray[start+i] = heapArray[start+j];
                 i = j;
                 j = 2 * j + 1;
             } else break;
         }
-        heapArray[i] = temp;
+        heapArray[start+i] = temp;
     }
 
     static void multiWayMergeSort(List<File> files, File outputFile) throws IOException {
